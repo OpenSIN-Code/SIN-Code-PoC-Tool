@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: poc
+Version: 0.1.0
+Summary: Proof-of-Correctness — automated verification of code invariants via AST analysis
+Author-email: OpenSIN-Code <dev@opensin-code.org>
+License: MIT
+Keywords: verification,ast,lint,invariants,code-quality
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: typer>=0.9.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+
+# PoC — Proof-of-Correctness
+
+PoC is an automated code verifier that checks invariants by walking the Python AST. It catches common bugs and anti-patterns such as bare `except:` blocks, mutable default arguments, unclosed file handles, `== None` comparisons, wildcard imports, and inconsistent return types. It runs as a standalone CLI or integrates into CI pipelines (exit code 1 on any failure).
